@@ -25,7 +25,8 @@
 				</div>
 				
 				<div class="span6">
-					<div class="row">
+					<label>Attention span<output class="muted pull-right">+1 every 10 minutes</output></label>
+					<!--<div class="row">
 						<div class="span3">
 							<label for="charge-interval">Interval <output for="charge-interval" class="muted"></output></label>
 						</div>
@@ -33,7 +34,7 @@
 						<div class="span3">
 							<label for="charge-size">Size <output for="charge-size" class="muted"></output></label>
 						</div>
-					</div>
+					</div>-->
 				</div>
 			</div>
 			
@@ -43,7 +44,11 @@
 				</div>
 				
 				<div class="span6">
-					<div class="row">
+					<input type="range" class="span6" min="0" max="9" step="1" value="1">
+					
+					<label class="pull-right">Productive</label>
+					<label>Distracted</label>
+					<!--<div class="row">
 						<div class="span3">
 							<input type="range" id="charge-interval" min="10" max="60" step="5">
 						</div>
@@ -51,7 +56,7 @@
 						<div class="span3">
 							<input type="range" id="charge-size" min="1" max="12" step="1">
 						</div>
-					</div>
+					</div>-->
 				</div>
 			</div>
 			
