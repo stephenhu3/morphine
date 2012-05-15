@@ -10,29 +10,19 @@ background._gaq.push(["_trackPageview", "/options"]);
 
 /*** charging ***/
 var charge = {
-	$interval: $("#charge-interval"),
-	$intervaltext: $("output[for='charge-interval']"),
-	$size: $("#charge-size"),
-	$sizetext: $("output[for='charge-size']")
+	$preset: $("#charge-preset"),
+	$text: $("output[for='charge-preset']")
 };
 
-charge.$interval.change(function (e, real) {
-	charge.$intervaltext.text("(every " + this.value + " minutes)");
-	charge.$size.prop("max", (this.value / 10) * 2).change();
+charge.$preset.change(function (e, real) {
+	charge.$text.text("+" + " every " + " minutes");
 	
-	Data.set("charge-interval", this.valueAsNumber);
+	Data.set("charge-preset", this.valueAsNumber);
 	
 	real !== false && background.state.add.start();
 });
 
-charge.$size.change(function () {
-	charge.$sizetext.text("(+" + this.value + " per charge)");
-	
-	Data.set("charge-size", this.valueAsNumber);
-});
-
-charge.$size.val(Data.get("charge-size"));
-charge.$interval.val(Data.get("charge-interval")).trigger("change", [false]);
+charge.$preset.val(Data.get("charge-preset")).trigger("change", [false]);
 
 
 /*** targeting ***/
